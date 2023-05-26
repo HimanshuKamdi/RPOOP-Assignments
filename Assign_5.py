@@ -22,13 +22,13 @@ root.geometry('400x300')
 frame = tk.Frame(root)
 frame.pack(pady=20)
 
-question_label = tk.Label(frame, text='What is the capital of India?', font=('Arial', 14))
+question_label = tk.Label(frame, text='What is the financial capital of India?', font=('Arial', 14))
 question_label.grid(row=0, column=0, columnspan=2)
 
-correct_button = tk.Button(frame, text='Paris', command=lambda: check_answer('Correct'), bg='cyan', padx=10, pady=5)
+correct_button = tk.Button(frame, text='Mumbai', command=lambda: check_answer('Correct'), bg='cyan', padx=10, pady=5)
 correct_button.grid(row=3, column=0, padx=10, pady=50)
 
-incorrect_button = tk.Button(frame, text='London', command=lambda: check_answer('Incorrect'), bg='yellow', padx=10, pady=5)
+incorrect_button = tk.Button(frame, text='Delhi', command=lambda: check_answer('Incorrect'), bg='yellow', padx=10, pady=5)
 incorrect_button.grid(row=3, column=1, padx=10, pady=50)
 
 frame.columnconfigure(0, weight=1)
@@ -39,6 +39,10 @@ root.config(menu=menu_bar)
 
 file_menu = tk.Menu(menu_bar, tearoff=0)
 file_menu.add_command(label='New Window', command=open_new_window)
+file_menu.add_command(label='Open', command=lambda: print("open"))
+file_menu.add_command(label='Save', command=lambda: print("Save"))
+file_menu.add_command(label='Save As', command=lambda: print("Save As"))
+file_menu.add_separator()
 file_menu.add_command(label="Exit", command=root.quit)
 menu_bar.add_cascade(label='File', menu=file_menu)
 
